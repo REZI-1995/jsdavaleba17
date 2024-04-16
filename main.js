@@ -1,25 +1,50 @@
-// 1. html ფაილში (ჯავასკრიპტით არა) შევქმნათ ღილაკი, ამ ღილაკის კლიკზე წაიშალოს თვითონ ეს ღილაკი.
-const gamaqre = section.querySelector("button");
-function gamaqre(event) {
-	event.stopPropagation();
-	console.log("button clicked", event);
-}
-gamaqre.addEventListener("click", gamaqre);
-// 2. ჯავასკრიპტით შევქმნათ img tag რომელსაც src ად მივანიჭებთ ამ:  https://picsum.photos/id/1/200/300
-//    ლინკს და ეს შექმნილი img ჩავსვათ body ში (ჯავასკრიპტით).
-
-// 3. html-ში შექმენით <section id="countries-list"></section>
-
-// 4. 
-//     4.1 რეპოზიტორში => countries.js ფაილში ნახეთ countries   მასივი რომელიც შედგება 4 ობიექტისგან. ეს მასივი გადააკოპირეთ თქვენთან.
-//     4.2. countries    მასივიდან .map ის საშულებით შექმენით html სტრინგი (როგორც ლექციაზე გავაკეთეთ)
-//      დიზაინი უნდა იყოს ქვემოთ ატვირთული ფოტოს მსგავსი (ფოტოზე მხოლოდ ორი ქვეყანაა, თქვენ ოთხივე უნდა დაამატოთ)
-//       (სტილები დაადეთ css ის საშუალებით, კლასები ჯავასკრიპტიდან).    
-//     4.3 ეს html სტრინგი ჩასვით ამ სექციაში: <section  id="countries-list"></section  >.
-//     4.4 დიზაინში  country card ზე არის სურათი, ქვეყნის სახელი და დედაქალაქი 
-//     (ასევე ღილაკები რომელიც მომდევნო დავალებისთვის გვჭირდება), თქვენ უნდა ჩასვათ  flag  , name   და   capital 
-//     (ეს მასივია) რომელიც არის მასივის ობიექტ ელემენტში.
-
-// 5.  (optional) #4 დავალებაში შექმნილ country   card - ზე დავამატოთ ღილაკები 
-// (წაშლა და ინფო -  ჯავასკრიპტიდან, წინა დავალებაში შექმნილ სტრინგთან ერთად, ფოტოზე როგორცაა), 
-// წაშლა ღილაკზე დაჭერით წავშალოთ შესაბამისი  country card-ი, ინფო ღილაკზე დაჭერის შედეგად ღილაკების ქვემოთ გამოვაჩინოთ რუკის ლინკი (map ) 
+const countries = [
+	{
+		name: "Georgia",
+		currencies: {
+			GEL: {
+				name: "lari",
+				symbol: "₾",
+			},
+		},
+		capital: ["Tbilisi"],
+		flag: "https://flagcdn.com/w320/ge.png",
+		map: "https://goo.gl/maps/bvCaGBePR1ZEDK5cA",
+	},
+	{
+		name: "Federal Republic of Germany",
+		currencies: {
+			EUR: {
+				name: "Euro",
+				symbol: "€",
+			},
+		},
+		capital: ["Berlin"],
+		flag: "https://flagcdn.com/w320/de.png",
+		map: "https://goo.gl/maps/mD9FBMq1nvXUBrkv6",
+	},
+	{
+		name: "Ukraine",
+		currencies: {
+			UAH: {
+				name: "Ukrainian hryvnia",
+				symbol: "₴",
+			},
+		},
+		capital: ["Kyiv"],
+		flag: "https://flagcdn.com/w320/ua.png",
+		map: "https://goo.gl/maps/DvgJMiPJ7aozKFZv7",
+	},
+	{
+		name: "United Kingdom of Great Britain and Northern Ireland",
+		currencies: {
+			GBP: {
+				name: "British pound",
+				symbol: "£",
+			},
+		},
+		capital: ["London"],
+		flag: "https://flagcdn.com/w320/gb.png",
+		map: "https://goo.gl/maps/FoDtc3UKMkFsXAjHA",
+	},
+];
